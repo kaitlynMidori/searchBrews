@@ -4,11 +4,8 @@ const searchURL = ("https://api.openbrewerydb.org/breweries");
 
  //format query params
 function formatQueryParams(params) {
-    //return object array with params
    const queryItems = Object.keys(params)
-   //produce object map param string key
      .map(key => `${key}=${params[key]}`)
-     //return array as string
    return queryItems.join('&');
  }
 
@@ -35,10 +32,10 @@ function displayResults(responseJson, maxResults) {
 }
 
 //error function
-// function handleErrors(response) {
-//     if(!response.ok) throw new Error(response.statusText);
-//     return response;
-// }
+function handleErrors(response) {
+    if(!response.ok) throw new Error(response.statusText);
+    return response;
+}
 
 // fetch(url)
 // .then(response => response.json())
@@ -48,35 +45,36 @@ function displayResults(responseJson, maxResults) {
 
 //getBreweries function
 function getBreweries(query, maxResults) {
-    //set API paramaters
+    //set paramaters
     const params = {
         by_state: query,
-        per_page: maxResults,
+        limit: maxResults,
     };
     const queryString = formatQueryParams(params);
     const url = searchURL + "?" + queryString;
     console.log(url);
-    //initiate fetch request using pure promise to get JSON object
     fetch(url)
-        .then((response) => {
-            // if HTTP-status is 200-299, return JSON
-            if (response.ok) {
-                return response.json();
-            }
-            //raise exception to reject promise and trigger .catch
-            throw new Error(response.statusText);
-        })
-        .then((responseJson) => displayResults(responseJson, maxResults))
-        //Catch any errors and return message
-        .catch((err) => {
-            $("#error-message").text(`Something went wrong: ${err.message}`);
-        });
+.then(response => response.json())
+.then(handleErrors)
+.then(response => console.log(responseJson))
+.catch(err => console.log(err));
+    //initiate fetch request using pure promise to get JSON object
+    // fetch(url)
+    //     .then((response) => {
+    //         // if HTTP-status is 200-299, return JSON
+    //         if (response.ok) {
+    //             return response.json();
+    //         }
+    //         throw new Error(response.statusText);
+    //     })
+    //     .then((responseJson) => displayResults(responseJson, maxResults))
+    //     //Catch any errors and return message
+    //     .catch((err) => {
+    //         $("#error-message").text(`Something went wrong: ${err.message}`);
+//         });
 }
-
 function watchForm() {
-    // Bind an event handler to the “submit” JavaScript event
     $("form").submit((event) => {
-        // If this method is called, the default action of the event will not be triggered.
         event.preventDefault();
         let by_state = $("#by_state").val();
 	// by_state = by_state.replace(/\s/g, '');

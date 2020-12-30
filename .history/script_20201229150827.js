@@ -4,11 +4,8 @@ const searchURL = ("https://api.openbrewerydb.org/breweries");
 
  //format query params
 function formatQueryParams(params) {
-    //return object array with params
    const queryItems = Object.keys(params)
-   //produce object map param string key
      .map(key => `${key}=${params[key]}`)
-     //return array as string
    return queryItems.join('&');
  }
 
@@ -34,24 +31,12 @@ function displayResults(responseJson, maxResults) {
     $("#results").removeClass("hidden");
 }
 
-//error function
-// function handleErrors(response) {
-//     if(!response.ok) throw new Error(response.statusText);
-//     return response;
-// }
-
-// fetch(url)
-// .then(response => response.json())
-// .then(handleErrors)
-// .then(response => console.log(responseJson))
-// .catch(err => console.log(err));
-
 //getBreweries function
 function getBreweries(query, maxResults) {
-    //set API paramaters
+    //set paramaters
     const params = {
         by_state: query,
-        per_page: maxResults,
+        limit: maxResults,
     };
     const queryString = formatQueryParams(params);
     const url = searchURL + "?" + queryString;
@@ -63,7 +48,6 @@ function getBreweries(query, maxResults) {
             if (response.ok) {
                 return response.json();
             }
-            //raise exception to reject promise and trigger .catch
             throw new Error(response.statusText);
         })
         .then((responseJson) => displayResults(responseJson, maxResults))
@@ -72,11 +56,8 @@ function getBreweries(query, maxResults) {
             $("#error-message").text(`Something went wrong: ${err.message}`);
         });
 }
-
 function watchForm() {
-    // Bind an event handler to the “submit” JavaScript event
     $("form").submit((event) => {
-        // If this method is called, the default action of the event will not be triggered.
         event.preventDefault();
         let by_state = $("#by_state").val();
 	// by_state = by_state.replace(/\s/g, '');

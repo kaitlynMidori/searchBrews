@@ -4,11 +4,8 @@ const searchURL = ("https://api.openbrewerydb.org/breweries");
 
  //format query params
 function formatQueryParams(params) {
-    //return object array with params
    const queryItems = Object.keys(params)
-   //produce object map param string key
      .map(key => `${key}=${params[key]}`)
-     //return array as string
    return queryItems.join('&');
  }
 
@@ -48,10 +45,10 @@ function displayResults(responseJson, maxResults) {
 
 //getBreweries function
 function getBreweries(query, maxResults) {
-    //set API paramaters
+    //set paramaters
     const params = {
         by_state: query,
-        per_page: maxResults,
+        limit: maxResults,
     };
     const queryString = formatQueryParams(params);
     const url = searchURL + "?" + queryString;
@@ -63,7 +60,7 @@ function getBreweries(query, maxResults) {
             if (response.ok) {
                 return response.json();
             }
-            //raise exception to reject promise and trigger .catch
+            //check response and throw error
             throw new Error(response.statusText);
         })
         .then((responseJson) => displayResults(responseJson, maxResults))

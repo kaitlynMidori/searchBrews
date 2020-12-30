@@ -9,7 +9,7 @@ function formatQueryParams(params) {
    //produce object map param string key
      .map(key => `${key}=${params[key]}`)
      //return array as string
-   return queryItems.join('&');
+   return queryItems.join('_');
  }
 
 function displayResults(responseJson, maxResults) {
@@ -48,10 +48,10 @@ function displayResults(responseJson, maxResults) {
 
 //getBreweries function
 function getBreweries(query, maxResults) {
-    //set API paramaters
+    //set paramaters
     const params = {
         by_state: query,
-        per_page: maxResults,
+        limit: maxResults,
     };
     const queryString = formatQueryParams(params);
     const url = searchURL + "?" + queryString;

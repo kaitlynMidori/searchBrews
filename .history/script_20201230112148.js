@@ -48,7 +48,7 @@ function displayResults(responseJson, maxResults) {
 
 //getBreweries function
 function getBreweries(query, maxResults) {
-    //set API paramaters
+    //set paramaters
     const params = {
         by_state: query,
         per_page: maxResults,
