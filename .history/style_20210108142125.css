@@ -10,7 +10,15 @@ body {
     background-color: black;
 }
 
+form {
+    justify-content: center;
+}
 
+.results-amount {
+    border: 1px solid black;
+    font-size: 12px;
+    text-align: center;
+}
 
 .hidden {
     display: none;
@@ -19,10 +27,6 @@ body {
 h1  {
     text-align: center;
     font-size: 50px;
-}
-
-h2 {
-    text-align: center;
 }
 
 /* .search-form {
@@ -42,7 +46,7 @@ legend {
     text-align: center;
 }
 
-form p {
+p {
     margin: 5px;
     display: flex;
     width: auto;
@@ -50,18 +54,16 @@ form p {
     margin: 20px 0 20px 0;
 }
 
-/* .results-list {
+.results-amount {
     margin: auto;
     width: 50px;
     height: 25px;
     padding: 0px;
-    text-align: left;
+    text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
     border-radius: 6px;
-} */
-
-
+}
 
 .submit {
     border: 1px solid black;
@@ -80,18 +82,18 @@ form p {
     cursor: pointer;
 }
 
-/* .results-amount:hover {
+.results-amount:hover {
     cursor: text;
-} */
+}
 
 
 /*Results Styling*/
 
-/* .results-display-container {
+.results-display-container {
     margin: auto;
-} */
+}
 
-/* .single-result {
+.single-result {
     border: 1px solid rgb(177, 175, 175);
     margin: auto;
     border-radius: 8px;
@@ -99,4 +101,4 @@ form p {
     padding: 15px;
     width: 1000px;
     margin-bottom: 15px;
-} */
+}

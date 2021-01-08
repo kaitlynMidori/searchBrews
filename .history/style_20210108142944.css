@@ -42,7 +42,7 @@ legend {
     text-align: center;
 }
 
-form p {
+p {
     margin: 5px;
     display: flex;
     width: auto;
@@ -60,8 +60,6 @@ form p {
     margin-top: 10px;
     border-radius: 6px;
 } */
-
-
 
 .submit {
     border: 1px solid black;
