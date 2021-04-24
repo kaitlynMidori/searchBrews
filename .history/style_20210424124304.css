@@ -54,8 +54,8 @@ form p {
     justify-content: left;   
 }
 
-ol {
-    margin-left: 120px;
+.results-list {
+    margin-left: 150px;
 }
 
 /* .results-list {

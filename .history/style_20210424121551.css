@@ -1,15 +1,13 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    color: white;
+    color: black;
     margin: auto;
-    background: cover;
-    background: url("images/beer.jpg") no-repeat center center fixed;
-    -webkit-background-size: 100% auto;
-    -moz-background-size: 100% auto;
-    -ms-background-size: 100% auto;
-    -o-background-size: 100% auto;
-    background-size: 100% auto;   
+    /* background: cover; */
+    background: url("screenshots/beer.jpg") no-repeat center center fixed;
+    background-size: 70%;
+    width: 100%;
+    border: solid;
 }
 
 .hidden {
@@ -17,16 +15,12 @@ body {
 }
 
 h1  {
-    text-align: left;
+    text-align: center;
     font-size: 50px;
-    margin-left: 150px;
 }
 
 h2 {
-    text-align: left;
-    text-decoration: underline;
-    margin-left: 150px;
-    padding-top: 20px;
+    text-align: center;
 }
 
 /* .search-form {
@@ -42,20 +36,16 @@ h2 {
     border-radius: 8px;
 } */
 
-/* legend {
-    text-align: left;
-} */
-
-form p {
-   
-    margin-left: 150px;
-    display: flex;
-    width: auto;
-    justify-content: left;   
+legend {
+    text-align: center;
 }
 
-ol {
-    margin-left: 120px;
+form p {
+    margin: 5px;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    margin: 20px 0 20px 0;
 }
 
 /* .results-list {
@@ -74,8 +64,9 @@ ol {
 .submit {
     border: 1px solid black;
     background-color: white;
-    justify-content: left;
-   margin-left: 70px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
     width: 80px;
     height: 18px;
     border-radius: 6px;

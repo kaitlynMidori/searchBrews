@@ -51,11 +51,8 @@ form p {
     margin-left: 150px;
     display: flex;
     width: auto;
-    justify-content: left;   
-}
-
-ol {
-    margin-left: 120px;
+    justify-content: left;
+    
 }
 
 /* .results-list {

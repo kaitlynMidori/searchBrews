@@ -51,11 +51,8 @@ form p {
     margin-left: 150px;
     display: flex;
     width: auto;
-    justify-content: left;   
-}
-
-ol {
-    margin-left: 120px;
+    justify-content: left;
+    
 }
 
 /* .results-list {
@@ -75,7 +72,7 @@ ol {
     border: 1px solid black;
     background-color: white;
     justify-content: left;
-   margin-left: 70px;
+   margin-left: 100px;
     width: 80px;
     height: 18px;
     border-radius: 6px;
